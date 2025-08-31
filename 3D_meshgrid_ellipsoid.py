@@ -77,11 +77,10 @@ grid.cell_data["epsilon_r"] = relativePermeabilityGrid.flatten(order="F")
 # Threshold to show only cells with epsilon_r > er1
 thresholded = grid.threshold(er2, scalars="epsilon_r")
 
-# Plot
 # Scale the grid to match physical dimensions
 thresholded.scale([GRID_SIZE_X/CELL_COUNT_X, GRID_SIZE_Y/CELL_COUNT_Y, GRID_SIZE_Z/CELL_COUNT_Z])
 
-# Plot
+# PLOT
 plotter = pv.Plotter()
 plotter.add_mesh(thresholded, show_edges=True, cmap="viridis")
 
