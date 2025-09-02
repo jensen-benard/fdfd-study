@@ -53,22 +53,20 @@ thresholded.scale([GRID_SIZE_X/CELL_COUNT_X, GRID_SIZE_Y/CELL_COUNT_Y, GRID_SIZE
 plotter = pv.Plotter()
 plotter.add_mesh(thresholded, show_edges=True, cmap="viridis")
 
-# Add full 3D axes with tick marks
-plotter.add_axes()  # interactive=True allows you to rotate the axes
+plotter.add_axes()  
 
-# Add numeric axes with custom ticks
 plotter.show_bounds(
-    grid='back',          # display axes on back plane
-    ticks='outside',      # ticks outside the axes
+    grid='back',          
+    ticks='outside',      
     bounds=(0, CELL_COUNT_X, 0, CELL_COUNT_Y, 0, CELL_COUNT_Z),
     xlabel='X-axis', ylabel='Y-axis', zlabel='Z-axis',
     font_size=15,
-    n_xlabels=5,          # number of X-axis labels
-    n_ylabels=5,          # number of Y-axis labels
-    n_zlabels=6,          # number of Z-axis labels
+    n_xlabels=5,          
+    n_ylabels=5,          
+    n_zlabels=6,          
     location='outer',
     minor_ticks=True,
-    use_3d_text=True      # use 3D text for labels
+    use_3d_text=True      
 )
 
 plotter.show()
